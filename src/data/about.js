@@ -12,7 +12,7 @@ const certificatesData = [
     name: "The web developer bootcamp 2025",
     issuer: "Udemy",
     date: "July 2025",
-    link: "/certificates/web-developer.pdf", // Replace with actual credential link if available
+    link: "/My-Portfolio/certificates/web-developer.pdf", // Replace with actual credential link if available
   },
 ];
 

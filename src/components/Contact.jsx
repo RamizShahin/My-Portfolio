@@ -6,7 +6,7 @@ const Contact = () => {
     email: "hrnr.sh2002@gmail.com",
     linkedin: "https://linkedin.com/in/ramiz-shahin-73245a274",
     github: "https://github.com/RamizShahin",
-    resume: "/Ramiz_Shahin_CV.pdf",
+    resume: "/My-Portfolio/Ramiz_Shahin_CV.pdf",
   };
 
   const containerVariants = {

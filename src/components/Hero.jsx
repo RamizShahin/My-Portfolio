@@ -119,7 +119,7 @@ const Hero = () => {
           variants={imageVariants}
         >
           <img
-            src="/images/ramiz.jpg"
+            src="/My-Portfolio/images/ramiz.jpg"
             alt="Ramiz Shahin - Profile"
             className="w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 rounded-full object-cover object-top shadow-2xl border-4 border-white transform hover:scale-105 transition-transform duration-300"
           />
