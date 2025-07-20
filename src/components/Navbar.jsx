@@ -74,7 +74,6 @@ const Navbar = () => {
                 >
                   {item}
 
-                  {/* Sliding underline on hover */}
                   <span
                     className={`absolute left-0 -bottom-1 h-[2px] w-full origin-left scale-x-0 bg-blue-500 transform transition-transform duration-300 group-hover:scale-x-100 ${
                       activeSection === id
@@ -87,7 +86,7 @@ const Navbar = () => {
             })}
           </div>
 
-          {/* Mobile Menu Button */}
+          {/* mobile menu button */}
           <div className="md:hidden">
             <button onClick={toggleMenu} className="text-gray-700">
               {isOpen ? <X size={28} /> : <Menu size={28} />}
@@ -96,7 +95,7 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* Mobile Menu Dropdown */}
+      {/* mobile menu dropdown */}
       <AnimatePresence>
         {isOpen && (
           <motion.div

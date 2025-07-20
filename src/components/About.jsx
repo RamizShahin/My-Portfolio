@@ -38,9 +38,9 @@ const About = () => {
           About Me
         </motion.h2>
 
-        {/* First Row: About Me Paragraphs (Left) & Education (Right) */}
+        {/* first row: about me paragraphs (left) & education (right) */}
         <div className="flex flex-col md:flex-row gap-12 w-full items-start">
-          {/* About Me Paragraphs */}
+          {/* about me paragraphs */}
           <div className="md:w-1/2 text-left space-y-6">
             {/* md:w-1/2 for left column */}
             <motion.p
@@ -67,7 +67,7 @@ const About = () => {
               professional experience.
             </motion.p>
           </div>
-          {/* Education Section (Right Column) */}
+          {/* education section (right column) */}
           <motion.div
             className="md:w-1/2 text-left" // md:w-1/2 for right column
             variants={itemVariants}
@@ -102,19 +102,19 @@ const About = () => {
           </motion.div>
         </div>
 
-        {/* Second Row: Certifications (Full Width) */}
+        {/* second row: certifications (full width) */}
         <motion.div
           className="w-full mt-16 pt-8 border-t border-gray-700" // Separator line for the second row
           variants={itemVariants}
         >
           <h3 className="text-3xl sm:text-4xl font-bold mb-8 text-white text-center">
             {" "}
-            {/* Centered heading for certificates */}
+            {/* centered heading for certificates */}
             Certifications
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {" "}
-            {/* Adjusted to 3 columns on large screens */}
+            {/* adjusted to 3 columns on large screens */}
             {certificatesData.map((cert, index) => (
               <div className="hover:scale-110 hover:shadow-xl duration-500 cursor-pointer">
                 <motion.div
@@ -157,7 +157,7 @@ const About = () => {
           </div>
         </motion.div>
 
-        {/* Call to Action Button */}
+        {/* call to action button */}
         <motion.a
           variants={itemVariants}
           href="#contact"

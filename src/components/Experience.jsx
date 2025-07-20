@@ -31,18 +31,16 @@ const Experience = () => {
           My Experience
         </motion.h2>
 
-        {/* Timeline Container */}
         <motion.div
           className="relative mt-16"
           variants={containerVariants}
           initial="hidden"
           whileInView="show"
           exit="hidden"
-          viewport={{ amount: 0.1 }} // Trigger when 10% of container is visible
+          viewport={{ amount: 0.1 }}
         >
           {experienceData.length > 0 && (
             <>
-              {/* Vertical Line */}
               <div className="absolute left-1/2 transform -translate-x-1/2 w-1 bg-blue-600 h-full hidden md:block"></div>
               {experienceData.map((exp, index) => (
                 <motion.div
@@ -50,7 +48,6 @@ const Experience = () => {
                   className="mb-8 flex justify-between items-center w-full right-timeline"
                   variants={itemVariants}
                 >
-                  {/* Left Side (for even index) / Spacer (for odd index) */}
                   <div className="order-1 w-full md:w-5/12">
                     {index % 2 === 0 && (
                       <div className="bg-gray-800 p-6 rounded-xl shadow-xl border border-gray-700 md:text-right">
@@ -79,12 +76,10 @@ const Experience = () => {
                     )}
                   </div>
 
-                  {/* Timeline Node */}
                   <div className="z-10 flex items-center order-1 bg-blue-600 shadow-xl w-10 h-10 rounded-full md:absolute md:left-1/2 md:transform md:-translate-x-1/2">
                     <Briefcase className="w-6 h-6 text-white mx-auto" />
                   </div>
 
-                  {/* Right Side (for odd index) / Spacer (for even index) */}
                   <div className="order-1 w-full md:w-5/12">
                     {index % 2 !== 0 && (
                       <div className="bg-gray-800 p-6 rounded-xl shadow-xl border border-gray-700 md:text-left">

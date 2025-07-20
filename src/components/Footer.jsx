@@ -1,10 +1,9 @@
 import { motion } from "framer-motion";
-import { Linkedin, Github } from "lucide-react"; // Icons for social links
+import { Linkedin, Github } from "lucide-react";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
-  // Framer Motion variants for simple fade-in
   const footerVariants = {
     hidden: { opacity: 0, y: 20 },
     show: { opacity: 1, y: 0, transition: { duration: 0.8 } },
@@ -12,8 +11,8 @@ const Footer = () => {
 
   return (
     <motion.footer
-      id="footer" // Added ID for potential future navigation
-      className="bg-gray-950 text-gray-400 py-8 text-center" // Very dark background
+      id="footer"
+      className="bg-gray-950 text-gray-400 py-8 text-center"
       variants={footerVariants}
       initial="hidden"
       whileInView="show"
@@ -25,7 +24,7 @@ const Footer = () => {
         </p>
         <div className="flex justify-center space-x-6 mb-4">
           <a
-            href="https://linkedin.com/in/yourprofile" // REPLACE WITH YOUR LINKEDIN PROFILE URL
+            href="https://linkedin.com/in/yourprofile"
             target="_blank"
             rel="noopener noreferrer"
             className="text-gray-400 hover:text-blue-400 transition-colors duration-300"
@@ -34,7 +33,7 @@ const Footer = () => {
             <Linkedin className="w-6 h-6" />
           </a>
           <a
-            href="https://github.com/yourusername" // REPLACE WITH YOUR GITHUB PROFILE URL
+            href="https://github.com/yourusername"
             target="_blank"
             rel="noopener noreferrer"
             className="text-gray-400 hover:text-blue-400 transition-colors duration-300"

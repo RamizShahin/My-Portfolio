@@ -1,10 +1,7 @@
-// src/components/Contact.jsx
-import React from "react";
 import { motion } from "framer-motion";
-import { Mail, Linkedin, Github, FileText } from "lucide-react"; // Added FileText icon
+import { Mail, Linkedin, Github, FileText } from "lucide-react";
 
 const Contact = () => {
-  // Your contact information
   const contactInfo = {
     email: "hrnr.sh2002@gmail.com",
     linkedin: "https://linkedin.com/in/ramiz-shahin-73245a274",
@@ -12,13 +9,12 @@ const Contact = () => {
     resume: "/Ramiz_Shahin_CV.pdf",
   };
 
-  // Framer Motion variants for staggered animations
   const containerVariants = {
     hidden: { opacity: 0 },
     show: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.15, // Delay between child animations
+        staggerChildren: 0.15,
       },
     },
   };
@@ -53,13 +49,12 @@ const Contact = () => {
         </motion.p>
 
         <motion.div
-          className="flex flex-col sm:flex-row justify-center items-center gap-8 mb-12" // Added mb-12 for spacing below contact cards
+          className="flex flex-col sm:flex-row justify-center items-center gap-8 mb-12"
           variants={containerVariants}
           initial="hidden"
           whileInView="show"
           viewport={{ once: true, amount: 0.2 }}
         >
-          {/* Email Link */}
           <motion.a
             variants={itemVariants}
             href={`mailto:${contactInfo.email}`}
@@ -72,7 +67,6 @@ const Contact = () => {
             </span>
           </motion.a>
 
-          {/* LinkedIn Link */}
           <motion.a
             variants={itemVariants}
             href={contactInfo.linkedin}
@@ -87,7 +81,6 @@ const Contact = () => {
             </span>
           </motion.a>
 
-          {/* GitHub Link */}
           <motion.a
             variants={itemVariants}
             href={contactInfo.github}
@@ -101,12 +94,11 @@ const Contact = () => {
           </motion.a>
         </motion.div>
 
-        {/* Download CV Button */}
         <motion.a
           variants={itemVariants}
           href={contactInfo.resume}
-          target="_blank" // Opens in a new tab
-          rel="noopener noreferrer" // Security best practice for target="_blank"
+          target="_blank"
+          rel="noopener noreferrer"
           className="inline-flex items-center px-8 py-4 bg-blue-600 text-white font-bold rounded-full shadow-lg 
                      hover:bg-blue-700 transition duration-300 text-xl transform hover:scale-105"
           whileHover={{ scale: 1.05 }}
