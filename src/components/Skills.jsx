@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import skillsData from "@/data/skills";
+import SkillIcon from "./ui components/SkillIcon";
 
 const Skills = () => {
   const categories = [
@@ -11,7 +12,6 @@ const Skills = () => {
   const [activeCategory, setActiveCategory] = useState("All");
   const [filteredSkills, setFilteredSkills] = useState(skillsData);
 
-  // Effect to filter skills whenever activeCategory changes
   useEffect(() => {
     if (activeCategory === "All") {
       setFilteredSkills(skillsData);
@@ -22,13 +22,12 @@ const Skills = () => {
     }
   }, [activeCategory]);
 
-  // Framer Motion variants for staggered animations
   const containerVariants = {
     hidden: { opacity: 0 },
     show: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.1, // Delay between child animations
+        staggerChildren: 0.1,
       },
     },
   };
@@ -41,7 +40,6 @@ const Skills = () => {
   return (
     <section id="skills" className="py-16 md:py-24 bg-gray-900 text-white">
       {" "}
-      {/* Changed background to dark gray, text to white */}
       <div className="container mx-auto px-4 max-w-6xl">
         <motion.h2
           className="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight text-center mb-12"
@@ -53,7 +51,6 @@ const Skills = () => {
           My Skills
         </motion.h2>
 
-        {/* Category Filter Buttons */}
         <div className="flex justify-center flex-wrap gap-3 mb-10">
           {categories.map((category) => (
             <motion.button
@@ -61,8 +58,8 @@ const Skills = () => {
               onClick={() => setActiveCategory(category)}
               className={`px-6 py-2 rounded-full font-medium transition-all duration-300 shadow-md ${
                 activeCategory === category
-                  ? "bg-blue-600 text-white shadow-lg" // Active button: blue background, white text
-                  : "bg-gray-700 text-gray-200 hover:bg-gray-600 hover:shadow-md" // Inactive button: dark gray background, light gray text
+                  ? "bg-blue-600 text-white shadow-lg"
+                  : "bg-gray-700 text-gray-200 hover:bg-gray-600 hover:shadow-md"
               }`}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
@@ -72,7 +69,6 @@ const Skills = () => {
           ))}
         </div>
 
-        {/* Skills Grid */}
         <AnimatePresence mode="wait">
           <motion.div
             key={activeCategory}
@@ -81,32 +77,36 @@ const Skills = () => {
             initial="hidden"
             whileInView="show"
             exit="hidden"
-            viewport={{ amount: 0.2 }} // Trigger when 20% of container is visible
+            viewport={{ amount: 0.1 }}
           >
             {filteredSkills.length > 0 ? (
               filteredSkills.map((skill) => (
                 <div className="hover:scale-110 hover:shadow-xl duration-500">
                   <motion.div
-                    key={skill.name} // Use skill name as key, assuming unique names
+                    key={skill.name}
                     variants={itemVariants}
                     className="bg-gray-800 p-6 rounded-xl shadow-md flex flex-col items-center text-center hover:shadow-lg transition-shadow duration-300 border border-gray-700" // Skill card background and border adjusted
                   >
-                    <span className="text-5xl mb-4">{skill.icon}</span>
+                    {/* <span className="text-5xl mb-4">{skill.icon}</span> */}
+                    <div className="text-5xl mb-4 text-blue-400">
+                      {" "}
+                      {/* Added text-blue-400 for icon color */}
+                      <SkillIcon iconName={skill.icon} size="2.5em" />{" "}
+                      {/* Use size prop for scaling */}
+                    </div>
                     <h3 className="text-xl font-semibold text-white">
                       {" "}
-                      {/* Skill name text color */}
                       {skill.name}
                     </h3>
                     <p className="text-sm text-gray-400 mt-1">
                       {skill.category}
                     </p>{" "}
-                    {/* Category text color */}
                   </motion.div>
                 </div>
               ))
             ) : (
               <motion.p
-                className="col-span-full text-center text-gray-400 text-lg" // No skills message text color
+                className="col-span-full text-center text-gray-400 text-lg"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.5 }}

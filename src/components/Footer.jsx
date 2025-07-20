@@ -24,7 +24,7 @@ const Footer = () => {
         </p>
         <div className="flex justify-center space-x-6 mb-4">
           <a
-            href="https://linkedin.com/in/yourprofile"
+            href="https://linkedin.com/in/ramiz-shahin-73245a274"
             target="_blank"
             rel="noopener noreferrer"
             className="text-gray-400 hover:text-blue-400 transition-colors duration-300"
@@ -33,7 +33,7 @@ const Footer = () => {
             <Linkedin className="w-6 h-6" />
           </a>
           <a
-            href="https://github.com/yourusername"
+            href="https://github.com/RamizShahin"
             target="_blank"
             rel="noopener noreferrer"
             className="text-gray-400 hover:text-blue-400 transition-colors duration-300"
