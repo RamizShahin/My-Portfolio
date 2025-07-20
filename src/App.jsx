@@ -6,10 +6,10 @@ import "./App.css";
 function App() {
   return (
     <>
-      <BrowserRouter>
+      <BrowserRouter basename="/My-Portfolio">
         <Routes>
-          <Route path="/" element=<Home /> />
-          <Route path="*" element=<NotFound /> />
+          <Route path="/" element={<Home />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
     </>
