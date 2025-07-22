@@ -21,7 +21,7 @@ const About = () => {
   return (
     <section
       id="about"
-      className="py-16 md:py-24 bg-gray-800 text-white relative overflow-hidden"
+      className="py-16 md:py-24 text-white relative overflow-hidden"
     >
       <motion.div
         className="container mx-auto px-4 max-w-6xl flex flex-col items-center justify-center z-10 text-center"
@@ -35,17 +35,15 @@ const About = () => {
           variants={itemVariants}
           className="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight mb-12"
         >
-          About Me
+          <span className="text-white">About </span>
+          <span className="text-yellow-300">Me</span>
         </motion.h2>
 
-        {/* first row: about me paragraphs (left) & education (right) */}
         <div className="flex flex-col md:flex-row gap-12 w-full items-start">
-          {/* about me paragraphs */}
           <div className="md:w-1/2 text-left space-y-6">
-            {/* md:w-1/2 for left column */}
             <motion.p
               variants={itemVariants}
-              className="text-lg md:text-xl font-light leading-relaxed text-gray-200"
+              className="text-lg md:text-xl font-light leading-relaxed text-gray-100"
             >
               As a passionate Computer Engineering student, I am deeply focused
               on software and web development. I thrive on the challenge of
@@ -56,7 +54,7 @@ const About = () => {
             </motion.p>
             <motion.p
               variants={itemVariants}
-              className="text-lg md:text-xl font-light leading-relaxed text-gray-200"
+              className="text-lg md:text-xl font-light leading-relaxed text-gray-100"
             >
               I am committed to transforming complex ideas into functional and
               elegant applications. My approach combines strong analytical
@@ -67,11 +65,7 @@ const About = () => {
               professional experience.
             </motion.p>
           </div>
-          {/* education section (right column) */}
-          <motion.div
-            className="md:w-1/2 text-left" // md:w-1/2 for right column
-            variants={itemVariants}
-          >
+          <motion.div className="md:w-1/2 text-left" variants={itemVariants}>
             <h3 className="text-3xl sm:text-4xl font-bold mb-6 text-white">
               Education
             </h3>
@@ -80,9 +74,9 @@ const About = () => {
                 <motion.div
                   key={index}
                   variants={itemVariants}
-                  className="bg-gray-700 p-6 rounded-lg shadow-lg"
+                  className="bg-indigo-800 p-6 rounded-lg shadow-lg"
                 >
-                  <h4 className="text-2xl font-semibold text-blue-300 mb-2">
+                  <h4 className="text-2xl font-bold text-white mb-2">
                     {edu.degree}
                   </h4>
                   <p className="text-xl text-gray-100 mb-1">
@@ -102,27 +96,25 @@ const About = () => {
           </motion.div>
         </div>
 
-        {/* second row: certifications (full width) */}
         <motion.div
-          className="w-full mt-16 pt-8 border-t border-gray-700" // Separator line for the second row
+          className="w-full mt-16 pt-8 border-t border-gray-700"
           variants={itemVariants}
         >
           <h3 className="text-3xl sm:text-4xl font-bold mb-8 text-white text-center">
-            {" "}
-            {/* centered heading for certificates */}
             Certifications
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {" "}
-            {/* adjusted to 3 columns on large screens */}
             {certificatesData.map((cert, index) => (
-              <div className="hover:scale-110 hover:shadow-xl duration-500 cursor-pointer">
+              <div
+                className="hover:scale-110 hover:shadow-xl duration-500 cursor-pointer"
+                key={`${index}-2`}
+              >
                 <motion.div
                   key={index}
                   variants={itemVariants}
-                  className="bg-gray-700 p-6 rounded-lg shadow-lg text-left"
+                  className="bg-indigo-800 p-6 rounded-lg shadow-lg text-left"
                 >
-                  <h4 className="text-xl font-semibold text-blue-300 mb-2">
+                  <h4 className="text-xl font-bold text-white mb-2">
                     {cert.name}
                   </h4>
                   <p className="text-lg text-gray-100 mb-1">{cert.issuer}</p>
@@ -157,7 +149,6 @@ const About = () => {
           </div>
         </motion.div>
 
-        {/* call to action button */}
         <motion.a
           variants={itemVariants}
           href="#contact"

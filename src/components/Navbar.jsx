@@ -18,7 +18,7 @@ const Navbar = () => {
           }
         });
       },
-      { threshold: 0.6 }
+      { threshold: 0.4 }
     );
 
     sections.forEach((section) => observer.observe(section));
@@ -47,7 +47,7 @@ const Navbar = () => {
 
   return (
     // <nav className="bg-white shadow-md fixed w-full z-50 mb-auto">
-    <nav className="bg-gray-950 text-gray-400 py-px text-center fixed w-full z-50 mb-auto">
+    <nav className="bg-gray-900 text-gray-400 py-px text-center fixed w-full z-50 mb-auto">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 justify-between items-center">
           <div className="bg-gradient-to-r to-blue-500 from-purple-600 bg-clip-text text-transparent text-2xl font-bold tracking-wide">
@@ -103,13 +103,13 @@ const Navbar = () => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
             transition={{ duration: 0.25 }}
-            className="md:hidden px-4 pt-2 pb-4 space-y-2 bg-white shadow-lg"
+            className="md:hidden px-4 pt-2 pb-4 space-y-2 bg-gray-900 shadow-lg"
           >
             {navItems.map((item) => (
               <a
                 key={item}
                 href={`#${item.toLowerCase()}`}
-                className="block text-gray-700 hover:text-blue-500 transition duration-300 font-medium"
+                className="block text-white hover:text-blue-500 transition duration-300 font-medium"
                 onClick={() => setIsOpen(false)}
               >
                 {item}

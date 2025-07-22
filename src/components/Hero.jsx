@@ -1,10 +1,11 @@
 import React from "react";
 import { motion } from "framer-motion";
+import BackgroundBlobs from "./BackgroundBlobs";
 
 const Hero = () => {
   const name = "Ramiz Shahin";
   const profession = "Computer Engineer";
-  const tagline = ""; // = "Crafting seamless digital experiences with passion and precision.";
+  const tagline = "";
   const containerVariants = {
     hidden: { opacity: 0 },
     show: {
@@ -32,32 +33,24 @@ const Hero = () => {
   return (
     <section
       id="hero"
-      className="relative flex items-center justify-center min-h-screen bg-gradient-to-br from-blue-500 to-purple-600 text-white overflow-hidden py-20"
+      className="relative min-h-screen flex flex-col items-center justify-center px-4"
     >
-      {/* background blob animation */}
-      <div className="absolute top-0 left-0 w-full h-full">
-        <div className="absolute -top-20 -left-20 w-80 h-80 bg-white opacity-10 rounded-full mix-blend-overlay animate-blob"></div>
-        <div className="absolute -bottom-10 -right-20 w-96 h-96 bg-white opacity-10 rounded-full mix-blend-overlay animate-blob animation-delay-2000"></div>
-        <div className="absolute top-1/4 left-1/2 w-64 h-64 bg-white opacity-10 rounded-full mix-blend-overlay animate-blob animation-delay-4000"></div>
-      </div>
-
       <motion.div
         className="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between z-10 text-center md:text-left"
         variants={containerVariants}
         initial="hidden"
         animate="show"
       >
-        {/* text content */}
         <div className="md:w-1/2 mb-10 md:mb-0">
           <motion.p
             variants={itemVariants}
-            className="text-lg md:text-xl font-light mb-2"
+            className="text-xl md:text-2xl font-light mb-2"
           >
             Hello, I'm
           </motion.p>
           <motion.h1
             variants={itemVariants}
-            className="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight mb-4"
+            className="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight mb-4 text-yellow-300"
           >
             {name}
           </motion.h1>
@@ -113,7 +106,6 @@ const Hero = () => {
           </motion.div>
         </div>
 
-        {/* image */}
         <motion.div
           className="md:w-1/2 flex justify-center md:justify-end mt-10 md:mt-0"
           variants={imageVariants}

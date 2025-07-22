@@ -19,16 +19,21 @@ const Experience = () => {
   };
 
   return (
-    <section id="experience" className="py-16 md:py-24 bg-gray-900 text-white">
+    <section
+      id="experience"
+      className="py-16 md:py-24 text-white relative overflow-hidden"
+    >
       <div className="container mx-auto px-4 max-w-4xl">
         <motion.h2
           className="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight text-center mb-12"
           initial={{ opacity: 0, y: -50 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.3 }}
+          viewport={{ amount: 0.3 }}
+          exit={{ opacity: 0, y: -50 }}
           transition={{ duration: 0.6 }}
         >
-          My Experience
+          <span className="text-white">My </span>
+          <span className="text-yellow-300">Experience</span>
         </motion.h2>
 
         <motion.div
@@ -112,7 +117,7 @@ const Experience = () => {
 
           {!experienceData.length && (
             <motion.div
-              className="text-center text-gray-400 mt-8"
+              className="text-center text-gray-200 mt-8"
               variants={itemVariants}
             >
               <p>No experience data available.</p>

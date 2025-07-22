@@ -12,7 +12,7 @@ const Footer = () => {
   return (
     <motion.footer
       id="footer"
-      className="bg-gray-950 text-gray-400 py-8 text-center"
+      className="text-gray-400 py-8 text-center bg-gray-900 relative overflow-hidden"
       variants={footerVariants}
       initial="hidden"
       whileInView="show"
